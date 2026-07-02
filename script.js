@@ -66,4 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const body = document.body;
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      body.classList.toggle('menu-open');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        body.classList.remove('menu-open');
+      });
+    });
+  }
 });
